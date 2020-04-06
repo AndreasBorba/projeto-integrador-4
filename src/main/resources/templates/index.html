@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Ao invés de adicionar os pacotes do bootstrap, eu utilizo a referencia do site ao qual deve consultar -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<style>
+.borda-lateral {
+	border-left: solid 2px red;
+	padding: 4px;
+	font-weight: bold;
+}
+
+.tamanho {
+	width: 40%;
+}
+
+footer {
+	color: white;
+	margin-top: 15px;
+	padding: 10px;
+	text-align: center;
+}
+
+.espaco {
+	padding: 5px;
+}
+
+.espessura-hr {
+	background-color: black;
+	height: 4px;
+}
+
+.titulo {
+	margin-top: 20px;
+	font-style: zapf-Chancery;
+	font-size: 20px;
+	text-align: center;
+}
+</style>
+<title>Loja Eletrônicos</title>
+</head>
+<body>
+	<!-- Header do site -->
+	<header class="navbar-dark bg-dark">
+		<nav class="navbar ">
+			<a class="navbar-brand" href="#">Loja Eletrônicos</a>
+			<ul class="nav justify-content-end">
+				<li class="nav-item"><a class="nav-link" href="#">Cadastrar</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Produtos</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Carrinho</a></li>
+				<li class="nav-item"><a class="btn btn-outline-secondary" th:href="@{/form}" role="button">Login</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Primeira info do site Jumbotron -->
+	<div class="jumbotron bg-light">
+		<h1 class="display-4">Saudações jovém Padawan !</h1>
+		<p class="lead">Este site destina-se a todas pessoas antenadas no
+			mundo da tecnologia.</p>
+		<hr class="my-4">
+		<!-- Pequena info com bordas -->
+		<ul class="list-group list-group-flush">
+			<li
+				class="list-group-item bg-light border-primary border-left tamanho">Encontre
+				eletrônicos com preços acessíveis.</li>
+			<li class="list-group-item bg-light border-info border-right tamanho">Maior
+				variedade de produtos.</li>
+			<li
+				class="list-group-item bg-light border-success border-left tamanho">Melhor
+				preço do mercado.</li>
+		</ul>
+	</div>
+	<!-- Itens em formato de card - Mostrando como comprar -->
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
+				<span class="borda-lateral">Acompanhe como é fácil de
+					comprar!</span>
+			</div>
+
+			<div class="row row-cols-1 row-cols-md-3 container">
+				<div class="col mb-4">
+					<div class="card h-100">
+						<img th:src="@{eva.jpg}" height="185" class="card-img-top" alt="Passo 1">
+						<div class="card-body">
+							<h5 class="card-title">Passo 1</h5>
+							<p class="card-text">This is a longer card with supporting
+								text below as a natural lead-in to additional content. This
+								content is a little bit longer.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col mb-4">
+					<div class="card h-100">
+						<img th:src="@{linkin.jpg}" class="card-img-top" alt="Passo 2">
+						<div class="card-body">
+							<h5 class="card-title">Passo 2</h5>
+							<p class="card-text">This is a longer card with supporting
+								text below as a natural lead-in to additional content. This
+								content is a little bit longer.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col mb-4">
+					<div class="card h-100">
+						<img th:src="@{pitty.jpg}"  class="card-img-top" alt="Passo 3	">
+						<div class="card-body">
+							<h5 class="card-title">Passo 3</h5>
+							<p class="card-text">This is a longer card with supporting
+								text below as a natural lead-in to additional content. This
+								content is a little bit longer.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Opinião de compradores -->
+		<h2 class="titulo">Veja o que os nossos compradores estão
+			dizendo:</h2>
+		<hr class="my-4 tamanho espessura-hr">
+		<div class="card mb-12">
+			<div class="row no-gutters">
+				<div class="col-md-2 espaco">
+					<img th:src="@{user-image.png}" class="card-img" alt="Comprador 1">
+				</div>
+				<div class="col-md-4">
+					<div class="card-body">
+						<h5 class="card-title">João Araujo</h5>
+						<p class="card-text">Os produtos comprados chegaram antes do
+							previsto. Produto bom e atendimento excelente.</p>
+						<p class="card-text">
+							<small class="text-muted">Última atualização: 3 min
+								atrás.</small>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-2 espaco">
+					<img th:src="@{user-image.png}" class="card-img" alt="Comprador 2">
+				</div>
+				<div class="col-md-4">
+					<div class="card-body">
+						<h5 class="card-title">Carla Pessoa</h5>
+						<p class="card-text">Site super fácil de entender. O professor
+							Fernando Tsuda poderia validar este trabalho com a nota 10.</p>
+						<p class="card-text">
+							<small class="text-muted">Última atualização: 3 min
+								atrás.</small>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Rodapé do site -->
+	<footer class="navbar navbar-dark bg-dark">
+		<span>Copyright &copy; 2020 Loja de Eletrônicos - Todos os
+			direitos reservados</span>
+	</footer>
+</body>
+</html>

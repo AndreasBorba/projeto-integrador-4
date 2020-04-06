@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="estilo.css">
+<title>Formulario Bootstrap</title>
+<style>
+.separacao-radio {
+	margin-left: 15px;
+}
+</style>
+</head>
+
+<body>
+
+	<!-- Header do site -->
+	<header class="navbar-dark bg-dark">
+		<nav class="navbar ">
+			<a class="navbar-brand" th:href="@{/index}">Loja Eletrônicos</a>
+			<ul class="nav justify-content-end">
+				<li class="nav-item"><a class="nav-link" href="#">Cadastrar</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Produtos</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Carrinho</a></li>
+				<li class="nav-item"><a class="btn btn-outline-secondary"
+					th:href="@{/form}" role="button">Login</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="container" style="margin-top:10px;">
+		<form>
+
+			<div class="form-group">
+				<label for="nome">Nome: </label> <input type="text"
+					class="form-control" id="nome"> <small id="nomelHelp"
+					class="form-text text-muted">Campo necessario.</small>
+			</div>
+			<div class="form-group">
+				<label for="data">Data de nascimento: </label> <input type="date"
+					class="form-control" id="data">
+			</div>
+			<div class="form-group">
+				<label for="descricao">Descricao: </label>
+				<textarea class="form-control" id="descricao" rows="3"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="email">E-mail: </label> <input type="email"
+					class="form-control" id="email"> <small id="emailHelp"
+					class="form-text text-muted">Campo necessario.</small>
+			</div>
+			<div class="form-group">
+				<label for="senha">Senha: </label> <input type="password"
+					class="form-control" id="senha"> <small id="passwordHelp"
+					class="form-text text-muted">Campo necessario.</small>
+			</div>
+			<div class="form-group">
+				<label for="senhaRepetida">Insira a senha novamente: </label> <input
+					type="password" class="form-control" id="senhaRepetida"> <small
+					id="passwordRepetidaHelp" class="form-text text-muted">Campo
+					necessario.</small>
+			</div>
+			<div class="form-group">
+				<label for="numeroSorte">Numero da sorte: </label> <input
+					type="number" min="0" max="99" class="form-control"
+					id="numeroSorte">
+			</div>
+			<div class="form-group">
+				<label for="altura">Altura: </label> <input type="number"
+					class="form-control" id="altura">
+			</div>
+			<div class="form-group">
+				<label for="peso">Peso: </label> <input type="number"
+					class="form-control" id="peso">
+			</div>
+			<label for="sexo">Sexo: </label>
+			<div class="row" id="sexo">
+				<div class="form-check co-md-2 separacao-radio">
+					<input class="form-check-input" type="radio" name="exampleRadios"
+						id="exampleRadios1" value="option1" checked> <label
+						class="form-check-label" for="exampleRadios1"> Homem </label>
+				</div>
+				<div class="form-check col-md-2 separacao-radio">
+					<input class="form-check-input" type="radio" name="exampleRadios"
+						id="exampleRadios2" value="option2"> <label
+						class="form-check-label" for="exampleRadios2"> Mulher </label>
+				</div>
+				<br /> <br />
+			</div>
+			<label for="interesses">Interesses: </label>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value=""
+					id="defaultCheck1"> <label class="form-check-label"
+					for="defaultCheck1"> Tecnologia </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value=""
+					id="defaultCheck2"> <label class="form-check-label"
+					for="defaultCheck2"> Gastronomia </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value=""
+					id="defaultCheck3"> <label class="form-check-label"
+					for="defaultCheck3"> Viagens </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value=""
+					id="defaultCheck4"> <label class="form-check-label"
+					for="defaultCheck4"> Investimentos </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value=""
+					id="defaultCheck5"> <label class="form-check-label"
+					for="defaultCheck5"> Esportes </label>
+			</div>
+
+			<br />
+
+
+
+
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</form>
+	</div>
+	<script type="text/javascript">
+		validaCampo("nome");
+		validaCampo("email");
+
+		function validaCampo(idDoCampo) {
+			document.getElementById(idDoCampo).addEventListener("change",
+					function() {
+						var value = this.value.length;
+						if (value > 0) {
+							if (this.classList.contains('is-invalid')) {
+								this.classList.remove('is-invalid');
+							}
+							this.classList.add("is-valid");
+						} else {
+							if (this.classList.contains('is-valid')) {
+								this.classList.remove('is-valid');
+							}
+							this.classList.add("is-invalid");
+						}
+					});
+		}
+	</script>
+	<!--
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    -->
+	<script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
