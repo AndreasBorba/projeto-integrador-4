@@ -8,14 +8,40 @@ public class Pessoa {
 	private String sobrenome;
 	private Date dataNascimento;
 	private Endereco endereco;
+	private String senha;
+	private Sexo sexo;
 	
-	public Pessoa(String nome, String sobrenome, Date dataNascimento, Endereco endereco) {
+	public Pessoa(String nome, String sobrenome, Date dataNascimento, Endereco endereco, Sexo sexo, String senha) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
+		this.sexo = sexo;
+		this.senha = senha;
+		
 	}
 	
+	
+
+	public String getSenha() {
+		return senha;
+	}
+
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+
+
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
 
 	public Endereco getEndereco() {
 		return endereco;
