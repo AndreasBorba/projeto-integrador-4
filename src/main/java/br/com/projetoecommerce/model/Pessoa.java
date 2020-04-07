@@ -7,12 +7,25 @@ public class Pessoa {
 	private String nome;
 	private String sobrenome;
 	private Date dataNascimento;
+	private Endereco endereco;
 	
-	public Pessoa(String nome, String sobrenome, Date dataNascimento) {
+	public Pessoa(String nome, String sobrenome, Date dataNascimento, Endereco endereco) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.dataNascimento = dataNascimento;
+		this.endereco = endereco;
 	}
+	
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
 
 	public String getNome() {
 		return nome;
